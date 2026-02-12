@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    /* Dark Mode Default - Premium Tech Aesthetic */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 8% 13%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 8% 13%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 260 85% 65%;
+    --primary-foreground: 240 10% 3.9%;
+    --secondary: 240 8% 22%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 5% 30%;
+    --muted-foreground: 240 3% 60%;
+    --accent: 260 85% 65%;
+    --accent-foreground: 240 10% 3.9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 240 10% 3.9%;
+    --border: 240 8% 20%;
+    --input: 240 8% 18%;
+    --ring: 260 85% 65%;
+    --chart-1: 260 85% 65%;
+    --chart-2: 200 70% 60%;
+    --chart-3: 40 90% 55%;
+    --chart-4: 320 80% 60%;
+    --chart-5: 180 75% 50%;
+    --radius: 0.75rem;
+    --sidebar-background: 240 10% 3.9%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 260 85% 65%;
+    --sidebar-primary-foreground: 240 10% 3.9%;
+    --sidebar-accent: 240 8% 22%;
+    --sidebar-accent-foreground: 260 85% 65%;
+    --sidebar-border: 240 8% 20%;
+    --sidebar-ring: 260 85% 65%;
+  }
+  
+  .light {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 98%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 260 85% 65%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 5% 92%;
+    --secondary-foreground: 240 10% 3.9%;
+    --muted: 240 5% 90%;
+    --muted-foreground: 240 3% 50%;
+    --accent: 260 85% 65%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 5% 88%;
+    --input: 240 5% 90%;
+    --ring: 260 85% 65%;
+    --chart-1: 260 85% 65%;
+    --chart-2: 200 70% 60%;
+    --chart-3: 40 90% 55%;
+    --chart-4: 320 80% 60%;
+    --chart-5: 180 75% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  html {
+    color-scheme: dark;
+  }
+}
+
+@layer components {
+  /* Animated Gradient Background */
+  .gradient-mesh {
+    background: linear-gradient(135deg, #0f0f2e 0%, #1a1a4d 25%, #2d1b69 50%, #1a1a4d 75%, #0f0f2e 100%);
+    background-size: 400% 400%;
+    animation: mesh-gradient 15s ease infinite;
+  }
+  
+  @keyframes mesh-gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  
+  /* Premium Card with Glow Effect */
+  .card-premium {
+    @apply bg-card border border-border rounded-lg p-5 backdrop-blur-sm transition-all duration-300;
+    background: linear-gradient(135deg, rgba(31, 25, 77, 0.4) 0%, rgba(45, 27, 105, 0.4) 100%);
+    border: 1px solid rgba(260, 100%, 65%, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 
+                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  }
+  
+  .card-premium:hover {
+    border-color: rgba(260, 100%, 65%, 0.5);
+    box-shadow: 0 12px 40px rgba(166, 108, 255, 0.15),
+                inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Glow Button */
+  .btn-glow {
+    @apply relative inline-flex items-center justify-center px-6 py-3 rounded-lg font-medium transition-all duration-300;
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
+    color: hsl(var(--primary-foreground));
+    box-shadow: 0 0 20px rgba(166, 108, 255, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+  
+  .btn-glow:hover {
+    box-shadow: 0 0 30px rgba(166, 108, 255, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+  
+  .btn-glow:active {
+    transform: translateY(0);
+  }
+  
+  /* Input with Focus Glow */
+  .input-glow {
+    @apply w-full px-4 py-3 rounded-lg bg-input border border-border text-foreground placeholder-muted-foreground transition-all duration-300;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .input-glow:focus {
+    @apply outline-none border-primary;
+    box-shadow: 0 0 20px rgba(166, 108, 255, 0.3),
+                inset 0 2px 4px rgba(0, 0, 0, 0.2),
+                inset 0 0 8px rgba(166, 108, 255, 0.1);
+  }
+  
+  /* Loading Animation */
+  .pulse-glow {
+    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  @keyframes pulse-glow {
+    0%, 100% {
+      opacity: 1;
+      box-shadow: 0 0 20px rgba(166, 108, 255, 0.3);
+    }
+    50% {
+      opacity: 0.8;
+      box-shadow: 0 0 40px rgba(166, 108, 255, 0.5);
+    }
+  }
+  
+  /* Fade In Animation */
+  .fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Stagger Animation for Multiple Elements */
+  .stagger-item {
+    animation: fade-in 0.6s ease-out;
+  }
+  
+  .stagger-item:nth-child(1) { animation-delay: 0.1s; }
+  .stagger-item:nth-child(2) { animation-delay: 0.2s; }
+  .stagger-item:nth-child(3) { animation-delay: 0.3s; }
+  .stagger-item:nth-child(4) { animation-delay: 0.4s; }
+  .stagger-item:nth-child(5) { animation-delay: 0.5s; }
+  
+  /* Copy Button with Feedback */
+  .btn-copy {
+    @apply px-3 py-1.5 rounded-md bg-primary text-primary-foreground text-xs font-medium transition-all duration-200;
+    box-shadow: 0 4px 12px rgba(166, 108, 255, 0.2);
+  }
+  
+  .btn-copy:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(166, 108, 255, 0.3);
+  }
+  
+  .btn-copy:active {
+    transform: translateY(0);
+  }
+}
