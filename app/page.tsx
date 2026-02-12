@@ -1,7 +1,7 @@
 "use client"
 
 import { useState, useRef, useEffect } from "react"
-import { Copy, Check, Sparkles, Loader2, Heart, Share2, Zap, Target, Lightbulb, TrendingUp, Star, Flame } from "lucide-react"
+import { Copy, Check, Sparkles, Loader2, Heart, Share2, Zap, Target, Lightbulb, TrendingUp, Star, Flame, Mail, Linkedin, Github } from "lucide-react"
 
 type AIResult = {
   linkedin: {
@@ -508,6 +508,92 @@ if (!data.success) {
 
           </div>
         )}
+
+        {/* Creator Credit Section */}
+        <div className="w-full border-t border-border mt-16 pt-12 pb-8">
+          <div className="max-w-4xl mx-auto">
+            {/* Decorative divider */}
+            <div className="flex items-center gap-3 mb-8 justify-center">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-cyan-500/40 to-transparent" />
+              <Sparkles size={18} className="text-cyan-400/70 icon-float" />
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-orange-500/40 to-transparent" />
+            </div>
+
+            {/* Creator card */}
+            <div className="card-premium p-8 border border-cyan-500/30 bg-gradient-to-br from-cyan-950/20 to-orange-950/20">
+              <div className="text-center mb-6">
+                <div className="inline-block">
+                  <div className="w-20 h-20 rounded-full bg-gradient-to-br from-cyan-400 via-teal-500 to-orange-400 flex items-center justify-center mb-4 mx-auto creator-badge-custom">
+                    <img
+                      src="./dpi.jpeg"
+                      alt="Om Sonawane"
+                      className="w-full h-full rounded-full object-cover"
+                    />
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold bg-gradient-to-r from-cyan-400 via-teal-400 to-orange-400 bg-clip-text text-transparent mb-2">
+                  OM SONAWANE
+                </h3>
+                <p className="text-sm text-cyan-300/80 mb-4 font-medium">
+                  Creator & Developer
+                </p>
+                <p className="text-sm text-foreground/70 max-w-md mx-auto leading-relaxed">
+                  Crafted this AI-powered content repurposing tool to help creators maximize their blog's potential across multiple platforms. Built with modern tech and creative vision.
+                </p>
+              </div>
+
+              {/* Social links */}
+              <div className="flex items-center justify-center gap-3 mb-6">
+                <a
+                  href="#"
+                  className="p-3 rounded-lg bg-cyan-500/20 hover:bg-cyan-500/40 transition-all group border border-cyan-500/30"
+                  title="LinkedIn"
+                >
+                  <Linkedin size={18} className="text-cyan-400 group-hover:text-cyan-300 transition-colors" />
+                </a>
+                <a
+                  href="#"
+                  className="p-3 rounded-lg bg-teal-500/20 hover:bg-teal-500/40 transition-all group border border-teal-500/30"
+                  title="GitHub"
+                >
+                  <Github size={18} className="text-teal-400 group-hover:text-teal-300 transition-colors" />
+                </a>
+                <a
+                  href="#"
+                  className="p-3 rounded-lg bg-orange-500/20 hover:bg-orange-500/40 transition-all group border border-orange-500/30"
+                  title="Email"
+                >
+                  <Mail size={18} className="text-orange-400 group-hover:text-orange-300 transition-colors" />
+                </a>
+              </div>
+
+              {/* Tech stack and credits */}
+              <div className="pt-6 border-t border-cyan-500/30">
+                <p className="text-xs text-cyan-300/60 text-center mb-4">
+                  Built with Next.js, React, Tailwind CSS, and Groq AI
+                </p>
+                <div className="flex items-center justify-center gap-2 flex-wrap">
+                  <span className="px-2 py-1 rounded text-xs bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">Next.js 16</span>
+                  <span className="px-2 py-1 rounded text-xs bg-teal-500/20 text-teal-300 border border-teal-500/30">AI SDK</span>
+                  <span className="px-2 py-1 rounded text-xs bg-orange-500/20 text-orange-300 border border-orange-500/30">Groq</span>
+                  <span className="px-2 py-1 rounded text-xs bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">TailwindCSS</span>
+                </div>
+              </div>
+
+              {/* Closing message */}
+              <div className="mt-6 p-4 rounded-lg bg-gradient-to-r from-cyan-500/10 to-orange-500/10 border border-cyan-500/30">
+                <p className="text-xs text-foreground text-center leading-relaxed">
+                  <span className="font-semibold text-cyan-400">Pro tip:</span> This tool uses AI to analyze your blog content and generate platform-optimized posts instantly. Perfect for content creators, marketers, and solopreneurs.
+                </p>
+              </div>
+            </div>
+
+            {/* Footer bottom */}
+            <p className="text-center text-xs text-cyan-400/60 mt-6">
+              © 2025 Om Sonawane. All rights reserved. Built with passion for creators.
+            </p>
+          </div>
+        </div>
       </div>
     </main>
   )

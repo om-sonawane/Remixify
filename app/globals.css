@@ -292,4 +292,49 @@
   .hover-scale:hover {
     transform: scale(1.02);
   }
+  
+  /* Creator badge animations */
+  .creator-badge {
+    animation: creator-glow 3s ease-in-out infinite;
+  }
+  
+  .creator-badge-custom {
+    animation: creator-glow-custom 3s ease-in-out infinite;
+  }
+  
+  @keyframes creator-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(166, 108, 255, 0.3),
+                  inset 0 0 20px rgba(166, 108, 255, 0.1);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(166, 108, 255, 0.5),
+                  inset 0 0 20px rgba(166, 108, 255, 0.2);
+    }
+  }
+  
+  @keyframes creator-glow-custom {
+    0%, 100% {
+      box-shadow: 0 0 25px rgba(34, 211, 238, 0.4),
+                  inset 0 0 20px rgba(34, 211, 238, 0.15);
+    }
+    50% {
+      box-shadow: 0 0 40px rgba(34, 211, 238, 0.6),
+                  inset 0 0 25px rgba(249, 115, 22, 0.2);
+    }
+  }
+  
+  /* Subtle icon float */
+  .icon-float {
+    animation: icon-float 4s ease-in-out infinite;
+  }
+  
+  @keyframes icon-float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-4px);
+    }
+  }
 }
