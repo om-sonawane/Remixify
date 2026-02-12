@@ -148,17 +148,33 @@ export default function Home() {
       setLoading(true)
 
       const response = await fetch("/api/repurpose", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url, tone }),
-      })
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ url }),
+})
 
-      const data = await response.json()
+if (!response.ok) {
+  const errorText = await response.text()
+  console.error("API Error Response:", errorText)
+  setError("Server error. Please try again.")
+  return
+}
 
-      if (!data.success) {
-        setError("Failed to generate content.")
-        return
-      }
+let data
+
+try {
+  data = await response.json()
+} catch (err) {
+  console.error("Invalid JSON response:", err)
+  setError("Invalid server response.")
+  return
+}
+
+if (!data.success) {
+  setError(data.error || "Failed to generate content.")
+  return
+}
+
 
       let rawText = data.raw.trim()
 
