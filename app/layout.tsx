@@ -8,9 +8,9 @@ const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 const spaceMono = Space_Mono({ subsets: ['latin'], weight: ['400', '700'], variable: '--font-space-mono' })
 
 export const metadata: Metadata = {
-  title: 'AI Blog Repurposer',
+  title: 'Remixify',
   description: 'Transform your blog into multi-platform content with AI',
-  generator: 'v0.app',
+  generator: 'omkar',
   viewport: {
     width: 'device-width',
     initialScale: 1,
