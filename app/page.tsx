@@ -395,19 +395,19 @@ export default function Home() {
                   id="linkedin-educational"
                   platform="linkedin"
                   title="Educational"
-                  content={formatContent(result.linkedin.educational)}
+                  content={formatContent(result?.linkedin?.educational)}
                 />
                 <Card
                   id="linkedin-controversial"
                   platform="linkedin"
                   title="Controversial Take"
-                  content={formatContent(result.linkedin.controversial)}
+                  content={formatContent(result?.linkedin?.controversial)}
                 />
                 <Card
                   id="linkedin-personal"
                   platform="linkedin"
                   title="Personal Story"
-                  content={formatContent(result.linkedin.personal)}
+                  content={formatContent(result?.linkedin?.personal)}
                 />
               </div>
             </section>
@@ -420,19 +420,19 @@ export default function Home() {
                   id="twitter-hook1"
                   platform="twitter"
                   title="Hook 1"
-                  content={formatContent(result.twitter.hook1)}
+                  content={formatContent(result?.twitter?.hook1)}
                 />
                 <Card
                   id="twitter-hook2"
                   platform="twitter"
                   title="Hook 2"
-                  content={formatContent(result.twitter.hook2)}
+                  content={formatContent(result?.twitter?.hook2)}
                 />
                 <Card
                   id="twitter-hook3"
                   platform="twitter"
                   title="Hook 3"
-                  content={formatContent(result.twitter.hook3)}
+                  content={formatContent(result?.twitter?.hook3)}
                 />
               </div>
             </section>
@@ -479,13 +479,13 @@ export default function Home() {
                 <Card
                   id="youtube-title"
                   title="Video Title"
-                  content={formatContent(result.youtube.title)}
+                  content={formatContent(result?.youtube?.title)}
                 />
                 <Card
                   id="youtube-description"
                   platform="youtube"
                   title="Video Description"
-                  content={formatContent(result.youtube.description)}
+                  content={formatContent(result?.youtube?.description)}
                 />
               </div>
             </section>
