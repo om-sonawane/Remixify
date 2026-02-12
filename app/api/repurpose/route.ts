@@ -7,10 +7,17 @@ const client = new OpenAI({
   baseURL: "https://api.groq.com/openai/v1",
 })
 
+const tonePrompts: Record<string, string> = {
+  professional: "Use a professional, authoritative tone with industry insights",
+  casual: "Use a friendly, conversational tone with relatability",
+  viral: "Use trendy, shareable language with current slang and hooks",
+  educational: "Use an informative, educational tone with detailed insights",
+  witty: "Use clever wordplay, humor, and witty observations",
+}
 
 export async function POST(req: NextRequest) {
   try {
-    const { url } = await req.json()
+    const { url, tone = "professional" } = await req.json()
 
     if (!url) {
       return NextResponse.json(
@@ -48,6 +55,7 @@ Your writing style:
 - No filler like "In today's fast-paced world"
 - Use strong hooks
 - Sound like a real LinkedIn creator
+- ${tonePrompts[tone] || tonePrompts.professional}
 
 You must return STRICTLY valid JSON.
 Do NOT include explanation.
