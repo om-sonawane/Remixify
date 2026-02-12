@@ -1,5 +1,5 @@
 # Remixify 🚀  
-## Remixify – AI-Powered Blog Content Repurposer  
+## Remixify – AI-Powered Blog Content Repurposer created with vibecoding & some Drinks🥂
 
 Turn one blog post into multiple high-quality marketing assets in seconds.
 
@@ -258,5 +258,6 @@ Built with speed.
 Engineered for resilience.  
 Shipped production-ready.
 
-
+---
+## credits:- om_sonawane 🙏
 
